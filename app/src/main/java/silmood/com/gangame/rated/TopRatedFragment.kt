@@ -15,10 +15,6 @@ class TopRatedFragment : BaseListFragment(){
         return DataBindingRecyclerAdapter<TopGame>(BR.topGame, R.layout.item_top_game)
     }
 
-    override fun getLayoutResId(): Int {
-        return R.layout.fragment_top_rated
-    }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 

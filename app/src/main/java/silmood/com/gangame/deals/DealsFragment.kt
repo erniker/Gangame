@@ -25,10 +25,6 @@ class DealsFragment : BaseListFragment() {
         listAdapter.notifyDataSetChanged()
     }
 
-    override fun onResume() {
-        super.onResume()
-    }
-
     fun getDummyDeals(): ArrayList<Deal> {
         return arrayListOf(Deal("Counter Strike",
                 0.99F,

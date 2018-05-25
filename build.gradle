@@ -3,7 +3,8 @@
 buildscript {
     ext.kotlin_version = '1.2.41'
     repositories {
-        google()
+        google() // Gradle 4.0+
+        maven { url "https://maven.google.com" } // Gradle < 4.0
         jcenter()
 
     }

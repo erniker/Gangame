@@ -85,7 +85,7 @@
                 android:textColor="@color/blue_gray"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                android:text="@{String.valueOf(deal.steamRating)"
+                android:text="@{String.valueOf(deal.steamRating)}"
                 app:layout_constraintStart_toStartOf="@+id/labelRatings"
                 app:layout_constraintTop_toBottomOf="@+id/labelRatings"
                 tools:text="50" />
@@ -102,7 +102,7 @@
                 android:textColor="@color/blue_gray"
                 android:textSize="12sp"
                 android:textStyle="bold"
-                android:text="@{String.valueOf(deal.metacriticScore)"
+                android:text="@{String.valueOf(deal.metacriticScore)}"
                 app:layout_constraintStart_toEndOf="@+id/labelSteamRating"
                 app:layout_constraintTop_toBottomOf="@+id/labelRatings"
                 tools:text="50" />

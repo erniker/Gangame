@@ -34,4 +34,3 @@ class DealsFragment : BaseListFragment() {
                 "http://cdn.akamai.steamstatic.com/steam/apps/10/capsule_184x69.jpg"))
     }
 }
-

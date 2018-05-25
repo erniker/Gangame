@@ -24,6 +24,11 @@ android {
         }
     }
     publishNonDefault true
+    flavorDimensions "default"
+    productFlavors {
+        mock { dimension "default" }
+        prod { dimension "default" }
+    }
 }
 
 dependencies {

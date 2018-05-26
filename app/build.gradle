@@ -16,6 +16,11 @@ android {
        dataBinding{
             enabled = true
         }
+
+        kapt {
+            generateStubs = true
+        }
+
     }
     buildTypes {
         release {

@@ -3,6 +3,8 @@ package silmood.com.gangamesdk
 object Routes {
 
     const val CHEAP_SHARK_STEAM_STORE = "1"
+
+    const val BASE_URL = "https://steamspy.com/api.php/"
     const val BASE_URL_STEAM_SPY = "https://steamspy.com/api.php"
     const val BASE_URL_CHEAP_SHARK = "https://cheapshark.com/api/1.0"
 

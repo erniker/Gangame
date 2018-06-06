@@ -51,12 +51,13 @@ class RequestTest {
         games?.let {
             Assert.assertEquals(games.size, jsonResponse.size)
 
-            games.zip(jsonResponse).forEach { (deal, jsonDeal) ->
-                with(jsonDeal.asJsonObject) {
-                    Assert.assertEquals(deal.title, this["name"].asString)
-                    Assert.assertEquals(deal.steamRating, this["score_rank"].asInt)
-                    Assert.assertEquals(deal.publisher, this["publisher"].asString)
-                    Assert.assertEquals(deal.owners, this["owners"].asInt)
+            games.zip(jsonResponse).forEach { (topGame, jsonTopGame) ->
+                with(jsonTopGame.asJsonObject) {
+                    Assert.assertEquals(topGame.title, this["name"].asString)
+                    Assert.assertEquals(topGame.steamRating, this["score_rank"].asInt)
+                    Assert.assertEquals(topGame.publisher, this["publisher"].asString)
+                    Assert.assertEquals(topGame.owners, this["owners"].asInt)
+                    Assert.assertEquals(topGame.thumb, "http://cdn.akamai.steamstatic.com/steam/apps/${this["appid"].asInt}/capsule_184x69jpg")
                 }
             }
         }

@@ -24,10 +24,10 @@ android {
         }
     }
     publishNonDefault true
-    flavorDimensions "default"
+    flavorDimensions "dimension"
     productFlavors {
-        mock { dimension "default" }
-        prod { dimension "default" }
+        mock { dimension "dimension" }
+        prod { dimension "dimension" }
     }
 }
 

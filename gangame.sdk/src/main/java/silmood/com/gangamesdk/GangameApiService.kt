@@ -22,7 +22,7 @@ class GangameApiService(val apiConfig: GangameApiConfig = GangameClientConfig())
         val apiClientConfig =
                 Retrofit.Builder()
                         .baseUrl(Routes.BASE_URL)
-                        .addConverterFactory(GsonConverterFactory.create())
+                        .addConverterFactory(GsonConverterFactory.create(gson))
 
         apiConfig.setupConfig(apiClientConfig)
         apiClient = apiClientConfig.build().create(RetrofitGangameApi::class.java)

@@ -28,8 +28,12 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
-
+    publishNonDefault true
+    flavorDimensions "dimension"
+    productFlavors {
+        mock { dimension "dimension" }
+        prod { dimension "dimension" }
+    }
 }
 
 dependencies {
@@ -44,6 +48,9 @@ dependencies {
     implementation 'com.android.support:design:27.1.1'
     implementation project(path: ':commons')
     kapt 'com.android.databinding:compiler:3.1.2'
+
+    mockImplementation project(path: ':gangame.sdk' , configuration: 'mockRelease')
+    prodImplementation project(path: ':gangame.sdk' , configuration: 'prodRelease')
 }
 
 repositories {

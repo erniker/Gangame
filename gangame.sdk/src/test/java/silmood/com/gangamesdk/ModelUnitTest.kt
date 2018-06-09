@@ -93,6 +93,5 @@ class ModelUnitTest {
         Assert.assertEquals(topGame.owners, 13364200)
         Assert.assertEquals(topGame.publisher, "Valve")
         Assert.assertEquals(topGame.thumb, "http://cdn.akamai.steamstatic.com/steam/apps/10/capsule_184x69jpg")
-        //"http://cdn.akamai.steamstatic.com/steam/apps/${app_id}/capsule_184x69jpg"
     }
 }

@@ -3,6 +3,7 @@ package silmood.com.gangamesdk
 import retrofit2.Call
 import retrofit2.http.GET
 import java.util.*
+import io.reactivex.Observable
 
 interface RetrofitGangameApi {
 

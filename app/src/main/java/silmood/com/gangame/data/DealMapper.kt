@@ -1,6 +1,6 @@
 package silmood.com.gangame.data
 
-import silmood.com.gangamesdk.Deal
+import silmood.com.gangame.Deal
 
 object DealMapper {
     fun fromSdk(deal: silmood.com.gangamesdk.Deal): Deal {

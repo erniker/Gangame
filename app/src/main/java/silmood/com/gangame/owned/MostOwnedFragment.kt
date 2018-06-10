@@ -28,7 +28,7 @@ class MostOwnedFragment : BaseListFragment() {
     fun getDummyTopGames(): ArrayList<TopGame> {
         return arrayListOf(TopGame("Counter Strike",
                 12344546,
-                publisher ="Valve",
+                publisher = "Valve",
                 steamRating = 80,
                 price = 9.99F,
                 position = 1,

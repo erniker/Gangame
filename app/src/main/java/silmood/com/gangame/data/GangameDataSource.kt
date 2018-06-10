@@ -1,11 +1,12 @@
 package silmood.com.gangame.data
 
 import silmood.com.gangame.Deal
+import silmood.com.gangame.TopGame
 import silmood.com.gangamesdk.GangameApiService
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
-import silmood.com.gangame.TopGame
+
 
 object GangameDataSource {
     val apiService = GangameApiService()
@@ -18,7 +19,7 @@ object GangameDataSource {
                     val arrayList = arrayListOf<Deal>()
                     arrayList.addAll(deals)
                     arrayList
-                }.oberserveOn(AndroidSchedulers.mainThread())
+                }.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
     }
 
@@ -26,11 +27,27 @@ object GangameDataSource {
         return apiService.apiClient
                 .getTopRatedGamesObservable()
                 .map { listGames ->
-                    val games = listGames.map { game -> TopGameMapper.fromSdk(game) }
+                    val games = listGames.mapIndexed {index, game ->
+                        TopGameMapper.fromSdk(game, (index + 1))
+                    }
                     val arrayList = arrayListOf<TopGame>()
                     arrayList.addAll(games)
                     arrayList
-                }.oberserveOn(AndroidSchedulers.mainThread())
+                }.observeOn(AndroidSchedulers.mainThread())
+                .subscribeOn(Schedulers.io())
+    }
+
+    fun getMostOwned(): Observable<ArrayList<TopGame>> {
+        return apiService.apiClient
+                .getMostOwnedGamesObservable()
+                .map { listGames ->
+                    val games = listGames.mapIndexed {index, game ->
+                        TopGameMapper.fromSdk(game, (index + 1))
+                    }
+                    val arrayList = arrayListOf<TopGame>()
+                    arrayList.addAll(games)
+                    arrayList
+                }.observeOn(AndroidSchedulers.mainThread())
                 .subscribeOn(Schedulers.io())
     }
 }

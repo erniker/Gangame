@@ -10,7 +10,7 @@ object TopGameMapper {
                 topGame.steamRating,
                 topGame.publisher,
                 topGame.price,
-                1,
+                position,
                 topGame.thumb)
     }
 }
